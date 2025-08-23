@@ -19,13 +19,14 @@ export default function Dictionary(props) {
   }
 
   function search() {
+    // documentation: https://dictionaryapi.dev/e
     let apiUrl = `https://api.dictionaryapi.dev/api/v2/entries/en_US/${keyword}`;
     axios.get(apiUrl).then(handleDictionaryResponse);
 
     let pexelsApiKey =
-      "JzkbcBsTO4MFJGX1j2L1Y55fTN6cwywez5YmBdGq33hK56IYJeclggmn";
+      "563492ad6f91700001000001fdd29f0808df42bd90c33f42e128fa89";
     let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
-    let headers = { Authorization: `Bearer ${pexelsApiKey}` };
+    let headers = { Authorization: `${pexelsApiKey}` };
     axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
