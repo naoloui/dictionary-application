@@ -10,7 +10,7 @@ export default function Dictionary(props) {
   let [loaded, setLoaded] = useState(false);
   let [photos, setPhotos] = useState(null);
 
-  function handleResponse(response) {
+  function handleDictionaryResponse(response) {
     setResults(response.data[0]);
   }
 
@@ -24,9 +24,9 @@ export default function Dictionary(props) {
 
     let pexelsApiKey =
       "JzkbcBsTO4MFJGX1j2L1Y55fTN6cwywez5YmBdGq33hK56IYJeclggmn";
-    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=4`;
+    let pexelsApiUrl = `https://api.pexels.com/v1/search?query=${keyword}&per_page=9`;
     let headers = { Authorization: `Bearer ${pexelsApiKey}` };
-    axios.get(pexelsApiUrl, { headers, headers }).then(handlePexelsResponse);
+    axios.get(pexelsApiUrl, { headers: headers }).then(handlePexelsResponse);
   }
 
   function handleSubmit(event) {
@@ -58,7 +58,7 @@ export default function Dictionary(props) {
           <div className="hint">Sunset, sea, yoga, love etc...</div>
         </section>
         <Results results={results} />
-        <Photos photos={results} />
+        <Photos photos={photos} />
       </div>
     );
   } else {
