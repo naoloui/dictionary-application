@@ -11,9 +11,9 @@ export default function Photos(props) {
               <div className="col-4" key={index}>
                 <a href={photo.src.original} target="_blank" rel="noreferrer">
                   <img
-                    src="https://images.pexels.com/lib/api/pexels.png"
+                    src={photo.src.landscape}
                     className="img-fluid"
-                    alt="https://images.pexels.com/lib/api/pexels.png"
+                    alt={photo.src.photographer}
                   />
                 </a>
               </div>

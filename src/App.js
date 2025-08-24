@@ -10,7 +10,18 @@ export default function App() {
           <Dictionary defaultKeyword="Love" />
         </main>
         <footer className="App-footer">
-          <small>Coded by Naomi L</small>
+          <small>
+            Coded by Naomi L on{" "}
+            <a href="https://github.com/naoloui/dictionary-application">
+              {" "}
+              Github{" "}
+            </a>{" "}
+            hosted on{" "}
+            <a href="https://app.netlify.com/projects/dictionary-application-naoloui/overview">
+              {" "}
+              Netlify{" "}
+            </a>
+          </small>
         </footer>
       </div>
     </div>
